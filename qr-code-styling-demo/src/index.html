@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Styling Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>QR Code Generator</h1>
+      <p>Create and customize your QR code with ease</p>
+    </header>
+    <main>
+      <section class="qr-preview">
+        <div id="qr-code"></div>
+        <button id="download-btn">Download PNG</button>
+      </section>
+      <section class="controls">
+        <label>
+          Data:
+          <input type="text" id="qr-input" value="https://www.doriafeministfund.org/" />
+        </label>
+        <div class="color-grid">
+          <label>
+            Dots Color:
+            <input type="color" id="dots-color" value="#f065a5" />
+          </label>
+          <label>
+            Corners Color:
+            <input type="color" id="corners-color" value="#89edbe" />
+          </label>
+          <label>
+            Corners Dot Color:
+            <input type="color" id="corners-dot-color" value="#000000" />
+          </label>
+          <label>
+            Background Color:
+            <input type="color" id="bg-color" value="#ffffff" />
+          </label>
+        </div>
+        <label>
+          Logo (URL):
+          <input type="text" id="logo-url" placeholder="https://..." />
+        </label>
+        <label>
+          Dots Type:
+          <select id="dots-type">
+            <option value="extra-rounded" selected>Extra Rounded</option>
+            <option value="rounded">Rounded</option>
+            <option value="dots">Dots</option>
+            <option value="classy">Classy</option>
+            <option value="classy-rounded">Classy Rounded</option>
+            <option value="square">Square</option>
+          </select>
+        </label>
+        <label>
+          Corners Square Type:
+          <select id="corners-square-type">
+            <option value="dot">Dot</option>
+            <option value="square">Square</option>
+            <option value="extra-rounded" selected>Extra Rounded</option>
+          </select>
+        </label>
+        <label>
+          Corners Dot Type:
+          <select id="corners-dot-type">
+            <option value="dot">Dot</option>
+            <option value="square">Square</option>
+          </select>
+        </label>
+        <label>
+          Logo (Upload):
+          <input type="file" id="logo-upload" accept="image/*" />
+        </label>
+        <button id="generate-btn">Update QR Code</button>
+      </section>
+    </main>
+  </div>
+  <img src="logo.png" alt="Test Logo" style="display:none;" id="test-logo" />
+  <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+  <script src="app.js"></script>
+  <script>
+    const qrCode = new QRCodeStyling({
+      width: 300,
+      height: 300,
+      data: "https://www.doriafeministfund.org/",
+      image: "logo.png",
+      dotsOptions: {
+        color: "#f065a5",
+        type: "extra-rounded",
+      },
+      backgroundOptions: {
+        color: "#ffffff",
+      },
+      cornersSquareOptions: {
+        color: "#89edbe",
+        type: "extra-rounded",
+      },
+      cornersDotOptions: {
+        color: "#000000",
+      },
+      imageOptions: {
+        crossOrigin: "anonymous",
+        margin: 20,
+      },
+    });
+    qrCode.append(document.getElementById("qr-code"));
+  </script>
+</body>
+</html>

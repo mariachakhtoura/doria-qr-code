@@ -1,0 +1,146 @@
+:root {
+  --black: black;
+  --aquamarine: #89edbe;
+  --hot-pink: #f065a5;
+  --dark-slate-grey: #1e5a44;
+  --white: white;
+  --medium-violet-red: #ad2b67;
+  --grey: #817f7f;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f065a5 0%, #89edbe 100%) no-repeat;
+  background-attachment: fixed;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  padding: 32px;
+  overflow: hidden;
+}
+
+header, main, .controls, .qr-preview, #qr-code {
+  background: var(--white);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  color: #222;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.qr-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#qr-code {
+  width: 300px;
+  height: 300px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--black);
+}
+
+button {
+  background: linear-gradient(135deg, #89edbe, #66cda3);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #66cda3, #4cae8d);
+  transform: scale(1.05);
+}
+
+.controls {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.controls label {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.controls input[type="text"] {
+  padding: 9px;
+  border: 1.5px solid var(--black);
+  border-radius: 6px;
+  font-size: 1rem;
+  background: var(--white);
+  color: var(--dark-slate-grey);
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+.controls input[type="color"] {
+  width: 44px;
+  height: 36px;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.controls select {
+  padding: 8px;
+  border: 1.5px solid var(--black);
+  border-radius: 6px;
+  font-size: 1rem;
+  background: var(--white);
+  color: var(--dark-slate-grey);
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
